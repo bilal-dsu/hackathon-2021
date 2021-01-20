@@ -38,6 +38,19 @@ myString = str(table)
 url += re.findall(r'(https?://\S+)', myString)
 ​
 ​
+#for PeerJ
+table = soup.findAll('div',attrs={"id":"addinfo-1"})
+print (table)
+for x in table:
+	myString = str((x.find('a')['href']))
+	url += re.findall(r'(https?://\S+)', myString)
+​
+table = soup.findAll('div',attrs={"class":"object-id article-component-doi"})
+print (table)
+for x in table:
+	myString = str((x.find('a')['href']))
+	url += re.findall(r'(https?://\S+)', myString)
+​
+​
 print (url)
 Collapse
-
